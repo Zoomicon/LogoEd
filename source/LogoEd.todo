@@ -1,0 +1,4 @@
+{TODO 5 -oBirbilis -cSaving :
+fix case where user gives only filename with no extension 
+at save as dialog so the dialog doesn't warn them the file already exists}
+{DONE -oBirbilis -cCredits : Add about dialog}
