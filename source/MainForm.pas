@@ -1,6 +1,6 @@
 //Logo highlighting editor (LogoEd)
 //(C)2004-2006 George Birbilis <birbilis@kagi.com>
-//Version: 1.2 (24May2006)
+//Version: 1.3 (25Jul2006)
 
 (***************************************************************************
 To compile the sources (Delphi7 version suggested) you also need
@@ -8,7 +8,7 @@ SynEdit (http://synedit.sf.net)
 [for Delphi7 use synedit_d7 package from RemObjects binaries newsgroup,
 see reference at RemObjects PascalScript newsgroup],
 UniHighlighter (see link to that at "Third party files" section of SynEdit
-home website) and JCL & JVCL (http://jcl.sf.net, http://jvcl.sf.net) 
+home website)
 
 Please give due credit at any derivative projects
 ***************************************************************************)
@@ -21,14 +21,13 @@ uses
   Windows, SysUtils, Classes, Controls, Forms,
   Dialogs,
   StdActns, ActnList, ActnCtrls,
-  ActnMan, ActnMenus, CustomizeDlg, 
+  ActnMan, ActnMenus, CustomizeDlg,
   BandActn, ComCtrls,
   SynEdit,
   SynEditExport, SynExportHTML, SynExportRTF,
   SynUniHighlighter,
   SynEditRegexSearch, SynEditSearch, SynEditMiscClasses, ImgList,
-  XPStyleActnCtrls, SynEditHighlighter, ToolWin, JvComponent,
-  JvComponentBase, JvMRUList;
+  XPStyleActnCtrls, SynEditHighlighter, ToolWin;
 
 type
   TEditor = class(TForm)
@@ -62,7 +61,6 @@ type
     SearchReplace1: TAction;
     SearchFindFirst1: TAction;
     SearchGoto1: TAction;
-    MRUList: TJvMruList;
     procedure SynEdit1DropFiles(Sender: TObject; X, Y: Integer; AFiles: TStrings);
     procedure FormCreate(Sender: TObject);
     procedure FileExit1Hint(var HintStr: String; var CanShow: Boolean);
@@ -111,7 +109,7 @@ const
  NEWLINE=#13#10;
 
 resourcestring
- STR_VERSION='Version 1.2';
+ STR_VERSION='Version 1.3';
  STR_COPYRIGHT='(C)2004-2006 George Birbilis <birbilis@kagi.com>'+NEWLINE+'http://www.kagi.com/birbilis';
  STR_SYNUNIHIGHLIGHT_FILTER='Logo.hgl';
  STR_FILE_EXT='.logo';
@@ -279,7 +277,7 @@ begin
   SynEdit1.Lines.LoadFromFile(filename);
   CurrentFilename:=filename;
   FileSaveAs1.Dialog.FileName:=ChangeFileExt(ExtractFileName(filename),''); //set same filename (without extension in case user wants to save as HTML or RTF) at the save dialog too
-  MRUList.AddString(filename); 
+  //MRUList.AddString(filename);
   end;
 end;
 
@@ -378,11 +376,14 @@ end;
 procedure TEditor.FileSaveAs1Accept(Sender: TObject);
 begin
  with FileSaveAs1.Dialog do
+  begin
   case filterIndex of
    1: saveAsLogo(FileName);
    2: saveAsHTML(FileName);
    3: saveAsRTF(FileName);
    end;
+  FileName:=ChangeFileExt(ExtractFileName(Filename),''); //set same filename (without extension in case user wants to export as HTML/RTF) at the save dialog too later on
+  end;
 end;
 
 procedure TEditor.FileExit1Hint(var HintStr: String; var CanShow: Boolean);

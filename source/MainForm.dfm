@@ -7,24 +7,24 @@ object Editor: TEditor
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
+  Font.Height = -10
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object SynEdit1: TSynEdit
     Left = 0
-    Top = 54
+    Top = 51
     Width = 612
-    Height = 347
+    Height = 356
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -17
+    Font.Height = -15
     Font.Name = 'Courier New'
     Font.Style = []
     TabOrder = 0
@@ -43,7 +43,7 @@ object Editor: TEditor
     Left = 0
     Top = 0
     Width = 612
-    Height = 28
+    Height = 25
     UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
@@ -52,15 +52,14 @@ object Editor: TEditor
     ColorMap.UnusedColor = 15660791
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -14
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = []
-    PersistentHotKeys = True
     Spacing = 0
   end
   object ActionToolBar1: TActionToolBar
     Left = 0
-    Top = 28
+    Top = 25
     Width = 612
     Height = 26
     ActionManager = ActionManager1
@@ -72,7 +71,7 @@ object Editor: TEditor
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 401
+    Top = 407
     Width = 612
     Height = 19
     Panels = <
@@ -300,6 +299,7 @@ object Editor: TEditor
     object FileSaveAs1: TFileSaveAs
       Category = 'File'
       Caption = 'Save &As...'
+      Dialog.DefaultExt = 'logo'
       Dialog.Filter = 
         'Logo files (*.logo;*.lgo)|*.logo;*.lgo|HTML files (*.html;*.htm)' +
         '|*.html;*.htm|RTF files (*.rtf)|*.rtf'
@@ -944,11 +944,5 @@ object Editor: TEditor
   object SynEditRegexSearch1: TSynEditRegexSearch
     Left = 40
     Top = 144
-  end
-  object MRUList: TJvMruList
-    SubKeyUnicode = 'Software\Birbilis\LogoEd\MRU'
-    Active = False
-    Left = 8
-    Top = 304
   end
 end

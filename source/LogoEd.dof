@@ -115,7 +115,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=2
 Release=0
-Build=86
+Build=88
 Debug=0
 PreRelease=0
 Special=0
@@ -126,7 +126,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=
 FileDescription=LogoEd - Logo highlighting editor
-FileVersion=1.2.0.86
+FileVersion=1.2.0.88
 InternalName=
 LegalCopyright=(C)2004-2006 George Birbilis <birbilis@kagi.com>
 LegalTrademarks=

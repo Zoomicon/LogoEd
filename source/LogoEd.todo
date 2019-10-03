@@ -1,4 +1,5 @@
-{TODO 5 -oBirbilis -cSaving :
+{TODO : add MRU menu (and storage of mru items, plus option at tools menu to clear the mru list [get code from MLab])}
+{DONE 5 -oBirbilis -cSaving :
 fix case where user gives only filename with no extension 
 at save as dialog so the dialog doesn't warn them the file already exists}
 {DONE -oBirbilis -cCredits : Add about dialog}
