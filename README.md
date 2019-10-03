@@ -6,6 +6,11 @@ Syntax highlighting code editor for the Logo programming language
 Download the latest version from
 https://github.com/Zoomicon/LogoEd/releases
 
+## Highlighter
+
+The UniHighlighter rules for Logo are at
+https://github.com/Zoomicon/LogoEd/tree/master/highlighters/Logo.hgl
+
 ## Source code
 
 Coded in Delphi, uses UniHighlighter for syntax highlighting (see Logo.hgl) in the SynEdit text editor component
