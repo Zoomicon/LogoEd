@@ -283,7 +283,7 @@ object Editor: TEditor
       Category = 'File'
       Caption = '&Open...'
       Dialog.DefaultExt = '.logo'
-      Dialog.Filter = 'Logo files|*.logo;*.lgo'
+      Dialog.Filter = 'Logo files (*.logo;*.lgo)|*.logo;*.lgo'
       Dialog.Options = [ofReadOnly, ofCreatePrompt, ofEnableSizing]
       Hint = 'Open|Opens an existing file'
       ImageIndex = 0

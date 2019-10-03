@@ -1,10 +1,12 @@
 //Logo highlighting editor (LogoEd)
 //(C)2004-2006 George Birbilis <birbilis@kagi.com>
-//Version: 1.1 (16May2006)
+//Version: 1.2 (24May2006)
 
 (***************************************************************************
 To compile the sources (Delphi7 version suggested) you also need
-SynEdit (http://synedit.sf.net),
+SynEdit (http://synedit.sf.net)
+[for Delphi7 use synedit_d7 package from RemObjects binaries newsgroup,
+see reference at RemObjects PascalScript newsgroup],
 UniHighlighter (see link to that at "Third party files" section of SynEdit
 home website) and JCL & JVCL (http://jcl.sf.net, http://jvcl.sf.net) 
 
@@ -109,7 +111,7 @@ const
  NEWLINE=#13#10;
 
 resourcestring
- STR_VERSION='Version 1.1';
+ STR_VERSION='Version 1.2';
  STR_COPYRIGHT='(C)2004-2006 George Birbilis <birbilis@kagi.com>'+NEWLINE+'http://www.kagi.com/birbilis';
  STR_SYNUNIHIGHLIGHT_FILTER='Logo.hgl';
  STR_FILE_EXT='.logo';
