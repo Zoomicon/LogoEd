@@ -192,7 +192,7 @@ begin
    if gbSearchTextAtCaret then begin
     // if something is selected search for that text
     if SynEdit1.SelAvail
-       and (SynEdit1.BlockBegin.Line = SynEdit1.BlockEnd.Line) //Birb (fix at SynEdit's SearchReplaceDemo
+       and (SynEdit1.BlockBegin.Line = SynEdit1.BlockEnd.Line) //Birb (fix at SynEdit's SearchReplaceDemo)
     then
      SearchText := SynEdit1.SelText
     else
