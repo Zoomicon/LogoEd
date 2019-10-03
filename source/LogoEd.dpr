@@ -1,5 +1,5 @@
 //Logo highlighting editor (LogoEd)
-//(C)2004-2006 George Birbilis <birbilis@kagi.com>
+//(C)2004-2019 George Birbilis <birbilis@zoomicon.com>
 
 program LogoEd;
 

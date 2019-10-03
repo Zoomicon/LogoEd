@@ -1,6 +1,6 @@
 //Logo highlighting editor (LogoEd)
-//(C)2004-2006 George Birbilis <birbilis@kagi.com>
-//Version: 1.3 (25Jul2006)
+//(C)2004-2019 George Birbilis <birbilis@zoomicon.com>
+//Version: 1.4 (20191003)
 
 (***************************************************************************
 To compile the sources (Delphi7 version suggested) you also need
@@ -109,8 +109,8 @@ const
  NEWLINE=#13#10;
 
 resourcestring
- STR_VERSION='Version 1.3';
- STR_COPYRIGHT='(C)2004-2006 George Birbilis <birbilis@kagi.com>'+NEWLINE+'http://www.kagi.com/birbilis';
+ STR_VERSION='Version 1.4';
+ STR_COPYRIGHT='(C)2004-2019 George Birbilis <birbilis@zoomicon.com>'+NEWLINE+'http://zoomicon.com';
  STR_SYNUNIHIGHLIGHT_FILTER='Logo.hgl';
  STR_FILE_EXT='.logo';
  STR_NOTSAVED='File has not been saved, save now?';

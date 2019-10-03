@@ -126,13 +126,13 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=
 FileDescription=LogoEd - Logo highlighting editor
-FileVersion=1.2.0.88
+FileVersion=1.4.0.0
 InternalName=
-LegalCopyright=(C)2004-2006 George Birbilis <birbilis@kagi.com>
+LegalCopyright=(C)2004-2019 George Birbilis <birbilis@zoomicon.com>
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=1.2.0.0
+ProductVersion=1.4.0.0
 Remarks=
 Network=
 [HistoryLists\hlUnitAliases]
