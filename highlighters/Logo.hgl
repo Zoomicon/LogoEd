@@ -1,0 +1,1029 @@
+<UniHighlighter>
+ <ImportantInfo>
+  ******* Please read carefully *************************
+  * Please, make any changes in this file very carefuly!*
+  * It is much more convinient to use native designer!  *
+  *******************************************************
+ </ImportantInfo>
+ <Info>
+  <General>
+   <Name>Logo</Name>
+   <FileTypeName>LOGO LGO</FileTypeName>
+   <Layout>Logo</Layout>
+  </General>
+  <Author>
+   <Name>George Birbilis</Name>
+   <Email>birbilis@kagi.com</Email>
+   <Web>www.kagi.com/birbilis</Web>
+   <Copyright>Copyright (c) George Birbilis, 2004-2005</Copyright>
+   <Company></Company>
+   <Remark>Created based on unihighlighter:Pascal</Remark>
+  </Author>
+  <Version>
+   <Version>1</Version>
+   <Revision>5</Revision>
+   <Date>38612,5651161806</Date>
+   <Type>Beta</Type>
+  </Version>
+  <History>
+   <H>10Mar2005 - added &qt;#include&qt;</H>
+  </History>
+  <Sample>
+   <S>#include &qt;|lib\test.logo|</S>
+   <S></S>
+   <S>;-- load a 3D mesh</S>
+   <S></S>
+   <S>to loadObject :filename</S>
+   <S> localmake &qt;result getObject(engine.CreateMesh(&qt;|media\models\|+:filename))</S>
+   <S> getMesh(:result).setVisible(true)</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S>;-- place the camera at given (X,Y,Z)</S>
+   <S></S>
+   <S>to placeCamera :X :Y :Z</S>
+   <S> camera.setLocation(engine.CreateVector3(:X :Y :Z))</S>
+   <S>end</S>
+   <S></S>
+   <S>;-- make camera look towards the given 3D mesh</S>
+   <S></S>
+   <S>to lookAt :mesh</S>
+   <S> camera.lookAt(getMesh(:mesh).getLocation FAST_SPEED)</S>
+   <S>end</S>
+   <S></S>
+   <S>;-- place given 3D mesh at given (X,Y,Z)</S>
+   <S></S>
+   <S>to place :mesh :x :y :z</S>
+   <S> getMesh(:mesh).setLocation(engine.createVector3(:x :y :z))</S>
+   <S>end</S>
+   <S></S>
+   <S>;-- camera initialization</S>
+   <S></S>
+   <S>placeCamera(0 0 50)</S>
+   <S>camera.lookAt(engine.createVector3(0 0 0) 1)</S>
+   <S></S>
+   <S>;-- complex 3D object/path creation</S>
+   <S></S>
+   <S>repeat 36 [</S>
+   <S> make &qt;angle repcount*10</S>
+   <S> make &qt;name &qt;ball+string(:angle)</S>
+   <S> make :name loadObject(&qt;|BALL.x|)</S>
+   <S> place(::name 10*sin(:angle) 10*cos(:angle) 10*sin(:angle)*cos(:angle))</S>
+   <S> wait(1)</S>
+   <S>]</S>
+   <S></S>
+   <S>;-- camera animation</S>
+   <S></S>
+   <S>repeat 80 [</S>
+   <S> placeCamera(-repcount*1.1 repcount*0.1 50-repcount)</S>
+   <S> camera.lookAt(engine.createVector3(0 0 0) 1)</S>
+   <S> wait(0.2)</S>
+   <S>]</S>
+   <S></S>
+  </Sample>
+ </Info>
+ <Range Name="Root">
+ <Def>
+  <Back>16777215</Back>
+  <Fore>0</Fore>
+  <Style></Style>
+ </Def>
+ <Num>
+  <Back>16777215</Back>
+  <Fore>128</Fore>
+  <Style></Style>
+ </Num>
+ <OpenSymbol></OpenSymbol>
+ <CloseSymbol></CloseSymbol>
+ <DelimiterChars>&qt;%()*+,-./;&lt;=&gt;[\]^{|}</DelimiterChars>
+ <AnyTerm>True</AnyTerm>
+ <CloseOnTerm>False</CloseOnTerm>
+ <CloseOnEol>False</CloseOnEol>
+ <CaseSensitive>False</CaseSensitive>
+ <KW Name="Timing">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>wait</W>
+ </KW>
+ <KW Name="Operators">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>-</W>
+  <W>%</W>
+  <W>/</W>
+  <W>\</W>
+  <W>^</W>
+  <W>+</W>
+  <W>&lt;</W>
+  <W>=</W>
+  <W>&gt;</W>
+  <W></W>
+ </KW>
+ <KW Name="Symbols">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>(</W>
+  <W>)</W>
+  <W>[</W>
+  <W>]</W>
+ </KW>
+ <KW Name="List handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>butfirst</W>
+  <W>butlast</W>
+  <W>first</W>
+  <W>item</W>
+  <W>last</W>
+  <W>len</W>
+  <W>list</W>
+  <W>lput</W>
+  <W>put</W>
+ </KW>
+ <KW Name="Loops">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>do.until</W>
+  <W>do.while</W>
+  <W>for</W>
+  <W>repcount</W>
+  <W>repeat</W>
+  <W>until</W>
+  <W>while</W>
+ </KW>
+ <KW Name="Subroutines">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>end</W>
+  <W>output</W>
+  <W>stop</W>
+  <W>to</W>
+ </KW>
+ <KW Name="If blocks">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>if</W>
+  <W>ifelse</W>
+ </KW>
+ <KW Name="Constant handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>constant</W>
+ </KW>
+ <KW Name="Variable handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>localmake</W>
+  <W>make</W>
+ </KW>
+ <KW Name="Word handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>word</W>
+  <W>sentence</W>
+ </KW>
+ <KW Name="Math">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>abs</W>
+  <W>arccos</W>
+  <W>arcsin</W>
+  <W>arctan</W>
+  <W>arctan2</W>
+  <W>cos</W>
+  <W>integer</W>
+  <W>radarccos</W>
+  <W>radarcsin</W>
+  <W>radarctan</W>
+  <W>radarctan2</W>
+  <W>radcos</W>
+  <W>radsin</W>
+  <W>radtan</W>
+  <W>sin</W>
+  <W>tan</W>
+ </KW>
+ <KW Name="Objects">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>ask</W>
+  <W>each</W>
+  <W>tell</W>
+  <W>tellall</W>
+ </KW>
+ <KW Name="Include">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>BI</Style>
+  </Attri>
+  <W>#include</W>
+ </KW>
+  <Range Name="Single line comments ;...EOL">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>;</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars></DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Comments {...}">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>{</OpenSymbol>
+  <CloseSymbol>}</CloseSymbol>
+  <DelimiterChars></DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Strings &qt;...">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>&qt;</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>&qt;%)*+,-./:;&lt;=&gt;]^</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Strings &qt;|...|">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>&qt;|</OpenSymbol>
+  <CloseSymbol>|</CloseSymbol>
+  <DelimiterChars>|</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Variable :...">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>32768</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>255</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>:</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>%)*+,-./;&lt;=&gt;]^</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+ </Range>
+ <CopyRight>Rule file for UniHighlighter Delphi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>
+</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+ </Range>
+ <CopyRight>Rule file for UniHighlighter Delphi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>
+ausing a bad refreshing of the Stage component</S>
+   <S> ask :name [</S>
+   <S>  setName (word :name (random 1000))</S>
+   <S>  setLocation [1000 1000]</S>
+   <S> ]</S>
+   <S> output (removeFromList :name :list)</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return a given list of scene object names, sorted by the object locations' y part</S>
+   <S>;-- (used to have sheep start eating food above them from bottom to top)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to sortIconsByY :icons</S>
+   <S> output qsort :icons [ [name1 name2] [ output (getLocationY :name1) &lt; (getLocationY :name2) ] ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return a given list of scene object names, sorted by the object locations' x part</S>
+   <S>;-- (used to have new sheep added to the right of the rightmost sheep)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to sortIconsByX :icons</S>
+   <S> output qsort :icons [ [name1 name2] [ output (getLocationX :name1) &lt; (getLocationX :name2) ] ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return a given list of scene object names, sorted by the object locations</S>
+   <S>;-- (used to have new sheep added to the right of the rightmost sheep)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to sortIconsByXY :icons</S>
+   <S> output qsort :icons [ [name1 name2] [ output (and ((getLocationX :name1) &gt; (getLocationX :name2)) ((getLocationY :name1) &lt; (getLocationY :name2))) ] ]</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;*********************************************************************</S>
+   <S>;*** MICROWORLD SUBROUTINES</S>
+   <S>;*********************************************************************</S>
+   <S></S>
+   <S></S>
+   <S>;~~~~~~~~~~~~~~~</S>
+   <S>;~~~&gt; BARN &lt;~~~</S>
+   <S>;~~~~~~~~~~~~~~~</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- create and initialize barn object</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to makeBarn</S>
+   <S> ask :Scene [</S>
+   <S>  scene.disableRefresh</S>
+   <S>  localmake &qt;autoName (scene.makeObject &qt;Box)</S>
+   <S>  ask :autoName [</S>
+   <S>   setName :BARN_NAME</S>
+   <S>   setLocation :BARN_LOCATION</S>
+   <S>   setWidth :BARN_WIDTH</S>
+   <S>   setHeight :BARN_HEIGHT</S>
+   <S>   setcolor :BARN_COLOR</S>
+   <S>  ]</S>
+   <S>  scene.enableRefresh</S>
+   <S> ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return list with names of food objects inside the barn</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to getFoodInBarn</S>
+   <S> localmake &qt;leftX (getLocationX :BARN_NAME)-(getWidth :BARN_NAME)/2</S>
+   <S> localmake &qt;rightX (getLocationX :BARN_NAME)+(getWidth :BARN_NAME)/2</S>
+   <S> localmake &qt;topY (getLocationY :BARN_NAME)+(getHeight :BARN_NAME)/2</S>
+   <S> localmake &qt;bottomY (getLocationY :BARN_NAME)-(getHeight :BARN_NAME)/2</S>
+   <S></S>
+   <S> localmake &qt;result []</S>
+   <S> repeat (len :food) [</S>
+   <S>  localmake &qt;foodName (item repcount :food)</S>
+   <S>  localmake &qt;foodX (getLocationX :foodName)</S>
+   <S>  localmake &qt;foodY (getLocationY :foodName)</S>
+   <S>  if (and (:foodX&gt;:leftX) (:foodX&lt;:rightX) (:foodY&gt;:bottomY) (:foodY&lt;:topY) ) [</S>
+   <S>   localmake &qt;result (lput :foodName :result)</S>
+   <S>  ]</S>
+   <S> ]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;~~~~~~~~~~~~~~~</S>
+   <S>;~~~&gt; SHEEP &lt;~~~</S>
+   <S>;~~~~~~~~~~~~~~~</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- make sheep with given name and location (x,y)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to makeSheep :name :x :y</S>
+   <S> makeIcon :name :x :y :SHEEP_SIDE &qt;Sheep.gif true</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- make some sheep given a starting location (startX,startY) and a count</S>
+   <S>;-- for naming use given base name, appending an index to it (starting from startNameIndex)</S>
+   <S>;-- return list with those new sheep names</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to MakeSomeSheep :startX :startY :count :baseName :startNameIndex</S>
+   <S> localmake &qt;result []</S>
+   <S> repeat :count [</S>
+   <S>  localmake &qt;sheepX :startX+(repcount-1)*(:SHEEP_SIDE+:SHEEP_GAP)</S>
+   <S>  localmake &qt;sheepName (word :baseName repcount+:startNameIndex-1)</S>
+   <S>  makeSheep :sheepName :sheepX :startY</S>
+   <S>  localmake &qt;result (lput :sheepName :result)</S>
+   <S> ]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return last (rightmost) sheep's name</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to getLastSheep</S>
+   <S> ifelse (:sheep=[])</S>
+   <S>  [ output &qt;|| ]</S>
+   <S>  [ output (last sortIconsByX :sheep) ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- remove last sheep in sheep names' list and remove that from the scene too</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to removeLastSheep</S>
+   <S> if (:sheep=[]) [stop]</S>
+   <S> make &qt;sheep (removeIcon getLastSheep :sheep)</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- add a given number of sheep to the right of the rightmost sheep</S>
+   <S>;-- if no sheep exist, start at SHEEP_START location</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to addSheep :count</S>
+   <S> ifelse (not :sheep=[]) [</S>
+   <S>   localmake &qt;lastSheep getLastSheep</S>
+   <S>   localmake &qt;startX (getLocationX :lastSheep) + :SHEEP_SIDE + :SHEEP_GAP</S>
+   <S>   localmake &qt;startY (getLocationY :lastSheep)</S>
+   <S> ][</S>
+   <S>  localmake &qt;startX (first :SHEEP_START)</S>
+   <S>  localmake &qt;startY (last :SHEEP_START)</S>
+   <S> ]</S>
+   <S> localmake &qt;newSheep (MakeSomeSheep :startX :startY :count &qt;Sheep (len :sheep)+1)</S>
+   <S> make &qt;sheep (se :sheep :newSheep)</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- add one more sheep</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to addNewSheep</S>
+   <S> addSheep 1</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;~~~~~~~~~~~~</S>
+   <S>;~~~ FOOD ~~~</S>
+   <S>;~~~~~~~~~~~~</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- make food with given name and location (x,y)</S>
+   <S>;-- &qt;refresh&qt; parameter controls whether scene will be refreshed or not (use for batch creation of many food objects)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to makeFood :name :x :y :refresh</S>
+   <S> makeIcon :name :x :y :FOOD_SIDE &qt;Food.gif :refresh</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- make some food given a count</S>
+   <S>;-- for naming use given base name, appending an index to it (starting from startNameIndex)</S>
+   <S>;-- return list with those new food names</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to MakeSomeFood :count :baseName :startNameIndex</S>
+   <S> localmake &qt;result []</S>
+   <S> ask :Scene [scene.disableRefresh]</S>
+   <S> repeat :count [</S>
+   <S>  localmake &qt;foodName (word :baseName repcount+:startNameIndex-1)</S>
+   <S>  makeFood :foodName -100 -100 false</S>
+   <S>  localmake &qt;result (lput :foodName :result)</S>
+   <S> ]</S>
+   <S> ask :Scene [scene.enableRefresh]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- visually store list of given food inside the barn</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to storeFood :food</S>
+   <S> localmake &qt;leftX (getLocationX :BARN_NAME)-(getWidth :BARN_NAME)/2+(:FOOD_SIDE/2)+10</S>
+   <S> localmake &qt;rightX (getLocationX :BARN_NAME)+(getWidth :BARN_NAME)/2-(:FOOD_SIDE/2)-10</S>
+   <S> localmake &qt;topY (getLocationY :BARN_NAME)+(getHeight :BARN_NAME)/2-(:FOOD_SIDE/2)-10</S>
+   <S> localmake &qt;bottomY (getLocationY :BARN_NAME)-(getHeight :BARN_NAME)/2+(:FOOD_SIDE/2)+10</S>
+   <S></S>
+   <S> localmake &qt;foodX :leftX</S>
+   <S> localmake &qt;foodY (getLocationY :BARN_NAME)+(getHeight :BARN_NAME)/2-(:FOOD_SIDE/2)-10</S>
+   <S></S>
+   <S> repeat (len :food) [</S>
+   <S>  ask (item repcount :food) [</S>
+   <S>   setLocation (list :foodX :foodY)</S>
+   <S>  ]</S>
+   <S>  localmake &qt;foodX :foodX+:FOOD_SIDE+10</S>
+   <S>  if :foodX&gt;:rightX [</S>
+   <S>   localmake &qt;foodY :foodY-:FOOD_SIDE-10</S>
+   <S>   localmake &qt;foodX :leftX</S>
+   <S>   if :foodY&lt;:bottomY [</S>
+   <S>    localmake &qt;leftX :leftX+1</S>
+   <S>    localmake &qt;foodX :leftX</S>
+   <S>    localmake &qt;topY :topY-1</S>
+   <S>    localmake &qt;foodY :topY</S>
+   <S>   ]</S>
+   <S>  ]</S>
+   <S> ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- add given count of new food (into the barn)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to addFood :count</S>
+   <S> localmake &qt;newFood (MakeSomeFood :count &qt;Food (len :food)+1)</S>
+   <S> make &qt;food (se :food :newFood)</S>
+   <S> storeFood :newFood</S>
+   <S> storeFood getFoodInBarn</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- add one new portion of food (into the barn)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to addNewFood</S>
+   <S> addFood 1</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return food with given name</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to removeFood :foodName</S>
+   <S> make &qt;food (removeIcon :foodName :food)</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- remove bottom-most food from those inside the barn</S>
+   <S>;-- if none inside barn, remove the bottomright-most food from any outside the barn</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to removeLastFood</S>
+   <S> if (:food = []) [stop]</S>
+   <S> localmake &qt;foodList getFoodInBarn</S>
+   <S> if (:foodList=[]) [localmake &qt;foodList :food]</S>
+   <S> removeFood (first sortIconsByXY :foodList)</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;~~~~~~~~~~~~~~~~~~~~~</S>
+   <S>;~~~ SHEEP FEEDING ~~~</S>
+   <S>;~~~~~~~~~~~~~~~~~~~~~</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- place food with given name over sheep with given name, at given vertical index</S>
+   <S>;-- (location depends on x,y part of sheep's location and on FOOD_SIZE and this index)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to placeFood :sheepName :foodName :index</S>
+   <S> localmake &qt;foodX (getLocationX :sheepName)</S>
+   <S> ask :foodName [</S>
+   <S>  localmake &qt;foodY (getLocationY :sheepName) + :index*(:FOOD_SIDE+10)</S>
+   <S>  setLocation (list :foodX :foodY)</S>
+   <S> ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- feed: place given count of food from given list above sheep with given name</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to feedOneSheep :sheepName :theFood :count</S>
+   <S> localmake &qt;result :theFood</S>
+   <S> repeat :count [</S>
+   <S>  if (:theFood=[]) [output []]</S>
+   <S>  placeFood :sheepName (item repcount :theFood) repcount</S>
+   <S>  localmake &qt;result (butFirst :result)</S>
+   <S> ]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- stores all food back in the barn, then equally feeds all sheep:</S>
+   <S>;-- all sheep get (integer (:footCount/:sheepCount)) food and any remaining</S>
+   <S>;-- food (it's the modulo of the integer division) remains in the barn</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to feedSheep</S>
+   <S> ask :Scene [</S>
+   <S>  scene.disableRefresh</S>
+   <S>  storeFood :food</S>
+   <S>  scene.enableRefresh</S>
+   <S> ]</S>
+   <S></S>
+   <S> localmake &qt;sheepCount (len :sheep)</S>
+   <S> if :sheepCount=0 [stop]</S>
+   <S> localmake &qt;foodCount (len :food)</S>
+   <S> localmake &qt;foodPerSheep integer (:foodCount/:sheepCount)</S>
+   <S></S>
+   <S> localmake &qt;theFood :food</S>
+   <S> repeat (len :sheep) [</S>
+   <S>  localmake &qt;theFood (feedOneSheep (item repcount :sheep) :theFood :foodPerSheep)</S>
+   <S> ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- return list with names of food objects above sheep with given name</S>
+   <S>;-- using the rule (abs (food.x-sheep.x))&lt;:DX to select a sheep's food</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to getSheepFood :theSheep</S>
+   <S> localmake &qt;sheepX (getLocationX :theSheep)</S>
+   <S> localmake &qt;result []</S>
+   <S> repeat (len :food) [</S>
+   <S>  localmake &qt;foodName (item repcount :food)</S>
+   <S>  localmake &qt;foodX (getLocationX :foodName)</S>
+   <S>  if (abs (:sheepX-:foodX))&lt;:DX [</S>
+   <S>   localmake &qt;result (lput :foodName :result)</S>
+   <S>  ]</S>
+   <S> ]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- sheep with given name eats (removes) the bottom-most food above it</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to eatOneSheepFood :sheepName</S>
+   <S> localmake &qt;sheepFood (getSheepFood :sheepName)</S>
+   <S> if (:sheepFood=[]) [ output FALSE]</S>
+   <S> localmake &qt;sheepTodayFood (first (sortIconsByY :sheepFood))</S>
+   <S> removeFood :sheepTodayFood</S>
+   <S> output TRUE</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- all sheep eat the bottom-most food above them</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to eatFood</S>
+   <S> localmake &qt;result FALSE</S>
+   <S> repeat (len :sheep) [</S>
+   <S>  if eatOneSheepFood (item repcount :sheep) [ localmake &qt;result TRUE ]</S>
+   <S> ]</S>
+   <S> output :result</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;*********************************************************************</S>
+   <S>;*** SCENE SETUP</S>
+   <S>;*********************************************************************</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- set up scene with given number of sheep and food portions</S>
+   <S>;-- food portions get stored in the barn</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to setupScene :sheepCount :foodCount</S>
+   <S> ask :Scene [</S>
+   <S>  scene.clear</S>
+   <S>  setColor :SCENE_COLOR</S>
+   <S> ]</S>
+   <S> makeBarn</S>
+   <S> make &qt;sheep (MakeSomeSheep (first :SHEEP_START) (last :SHEEP_START) :sheepCount &qt;Sheep 1)</S>
+   <S> make &qt;food (MakeSomeFood :foodCount &qt;Food 1)</S>
+   <S> storeFood :food</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- (re)initialize scene, creating as many sheep and food the user has specified</S>
+   <S>;-- food portions get stored in the barn</S>
+   <S>;-- reset day counter to 1</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to reset</S>
+   <S> localmake &qt;sheepCount (ask &qt;edSheepCount [TFIELD.TEXT])</S>
+   <S> localmake &qt;foodCount (ask &qt;edFoodCount [TFIELD.TEXT])</S>
+   <S> ask &qt;edDay [ TFIELD.SETTEXT 1 ]</S>
+   <S> setupScene :sheepCount :foodCount</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;*********************************************************************</S>
+   <S>;*** SHEEP EATING SIMULATION</S>
+   <S>;*********************************************************************</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- increase day counter (no other actions/side-effects done)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to newDay</S>
+   <S> ask &qt;edDay [ TFIELD.SETTEXT TFIELD.TEXT+1 ]</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- check if user wants to stop the automatic feeding (see if related checkbox has been checked)</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to feedingStopped</S>
+   <S> output (ask &qt;cbStop [CheckBox.Selected] )</S>
+   <S>end</S>
+   <S></S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>;-- sheeps start eating, eat bottom-most food above them every day</S>
+   <S>;---------------------------------------------------------------------------</S>
+   <S>to startSimulation</S>
+   <S> ask &qt;cbStop [CheckBox.Unselect]</S>
+   <S>  while [eatFood] [</S>
+   <S>  newDay</S>
+   <S>  wait 4000</S>
+   <S>  if feedingStopped [stop]</S>
+   <S> ]</S>
+   <S> ask &qt;cbStop [CheckBox.Unselect]</S>
+   <S>end</S>
+   <S></S>
+   <S></S>
+   <S>;*********************************************************************</S>
+   <S>;*** TEST: SETUP SCENE WITH 4 SHEEP AND 10 FOOD PORTIONS</S>
+   <S>;*********************************************************************</S>
+   <S></S>
+   <S>setupScene 4 10</S>
+   <S></S>
+  </Sample>
+ </Info>
+ <Range Name="Root">
+ <Def>
+  <Back>16777215</Back>
+  <Fore>0</Fore>
+  <Style></Style>
+ </Def>
+ <Num>
+  <Back>16777215</Back>
+  <Fore>128</Fore>
+  <Style></Style>
+ </Num>
+ <OpenSymbol></OpenSymbol>
+ <CloseSymbol></CloseSymbol>
+ <DelimiterChars>&qt;%()*+,-/;&lt;=&gt;[\]^{|}</DelimiterChars>
+ <AnyTerm>True</AnyTerm>
+ <CloseOnTerm>False</CloseOnTerm>
+ <CloseOnEol>False</CloseOnEol>
+ <CaseSensitive>False</CaseSensitive>
+ <KW Name="Timing">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>wait</W>
+ </KW>
+ <KW Name="Operators">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>-</W>
+  <W>%</W>
+  <W>/</W>
+  <W>\</W>
+  <W>^</W>
+  <W>+</W>
+  <W>&lt;</W>
+  <W>=</W>
+  <W>&gt;</W>
+  <W>and</W>
+  <W>not</W>
+  <W>or</W>
+  <W>xor</W>
+ </KW>
+ <KW Name="Symbols">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>(</W>
+  <W>)</W>
+  <W>[</W>
+  <W>]</W>
+ </KW>
+ <KW Name="List handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>butfirst</W>
+  <W>butlast</W>
+  <W>first</W>
+  <W>item</W>
+  <W>last</W>
+  <W>len</W>
+  <W>list</W>
+  <W>lput</W>
+  <W>put</W>
+ </KW>
+ <KW Name="Loops">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>do.until</W>
+  <W>do.while</W>
+  <W>for</W>
+  <W>repcount</W>
+  <W>repeat</W>
+  <W>until</W>
+  <W>while</W>
+ </KW>
+ <KW Name="Subroutines">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>end</W>
+  <W>output</W>
+  <W>stop</W>
+  <W>to</W>
+ </KW>
+ <KW Name="If blocks">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>if</W>
+  <W>ifelse</W>
+ </KW>
+ <KW Name="Variable handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>localmake</W>
+  <W>make</W>
+ </KW>
+ <KW Name="Word handling">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>word</W>
+ </KW>
+ <KW Name="Math">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style></Style>
+  </Attri>
+  <W>abs</W>
+  <W>arccos</W>
+  <W>arcsin</W>
+  <W>arctan</W>
+  <W>arctan2</W>
+  <W>cos</W>
+  <W>integer</W>
+  <W>radarccos</W>
+  <W>radarcsin</W>
+  <W>radarctan</W>
+  <W>radarctan2</W>
+  <W>radcos</W>
+  <W>radsin</W>
+  <W>radtan</W>
+  <W>sin</W>
+  <W>tan</W>
+ </KW>
+ <KW Name="Objects">
+  <Attri>
+   <Back>16777215</Back>
+   <Fore>0</Fore>
+   <Style>B</Style>
+  </Attri>
+  <W>ask</W>
+  <W>each</W>
+  <W>tell</W>
+  <W>tellall</W>
+ </KW>
+  <Range Name="Single line comments ;...EOL">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>;</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars></DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Comments {...}">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>8421504</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>{</OpenSymbol>
+  <CloseSymbol>}</CloseSymbol>
+  <DelimiterChars></DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Strings &qt;...">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>&qt;</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>&qt;%)*+,-/:;&lt;=&gt;]^</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Strings &qt;|...|">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>16711680</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>&qt;|</OpenSymbol>
+  <CloseSymbol>|</CloseSymbol>
+  <DelimiterChars>|</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>False</CloseOnTerm>
+  <CloseOnEol>False</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+  <Range Name="Variable :...">
+  <Def>
+   <Back>16777215</Back>
+   <Fore>32768</Fore>
+   <Style></Style>
+  </Def>
+  <Num>
+   <Back>16777215</Back>
+   <Fore>255</Fore>
+   <Style></Style>
+  </Num>
+  <OpenSymbol>:</OpenSymbol>
+  <CloseSymbol></CloseSymbol>
+  <DelimiterChars>%)*+,-./;&lt;=&gt;]^</DelimiterChars>
+  <AnyTerm>True</AnyTerm>
+  <CloseOnTerm>True</CloseOnTerm>
+  <CloseOnEol>True</CloseOnEol>
+  <CaseSensitive>False</CaseSensitive>
+  </Range>
+ </Range>
+ <CopyRight>Rule file for UniHighlighter Delphi component (Copyright(C) Fantasist(walking_in_the_sky@yahoo.com), Vit(nevzorov@yahoo.com), 2002)</CopyRight>
+</UniHighlighter>
