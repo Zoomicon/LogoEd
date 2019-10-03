@@ -18,5 +18,4 @@ To compile the sources (Delphi7 version suggested) you also need:
 
 * UniHighlighter
 
-	see link to that at "Third party files" section of SynEdit website
-
+	see link to that at "Third party files" section of SynEdit website
